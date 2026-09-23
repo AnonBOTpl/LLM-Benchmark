@@ -413,34 +413,11 @@ Test 2048 MB - i oba mówią „na karcie".
 
 ## Narzędzia weryfikacyjne
 
-Kilka skryptów pomocniczych do sprawdzania pipeline'u bez klikania w GUI:
+Dwa sprawdzenia pilnują reguł, które łatwo złamać przypadkiem, i oba wchodzą w skład `npm run build`
+- a to jest `beforeBuildCommand` paczki Tauri, więc zepsute tłumaczenie albo etykieta, która wyrasta
+z kolumny, wywalają build zamiast wyjść na jaw po wydaniu:
 
 ```bash
-# Sprawdza wywołania Ollamy 1:1 z tym, co robi ollama.rs (pull nie, generate tak):
-# mierzy TTFT, tok/s i pokazuje zimny vs ciepły start.
-node scripts/ollama-smoke.mjs qwen2.5-coder:3b
-
-# Diagnostyka modeli VLM: wysyła obraz z kilkoma promptami i pokazuje surowy
-# strumień (ile chunków, ile znaków, TTFT, eval_count, tok/s, done_reason).
-# Przydatne, gdy model "nic nie mówi" - widać wtedy, czy to pusta odpowiedź.
-# Na starcie wypisuje też szablon modelu i to, czy w ogóle używa pola `system`.
-node scripts/vision-probe.mjs moondream "C:/sciezka/do/obrazu.jpg"
-
-# ...albo sprawdź, czy model reaguje na pole `system`:
-SYSTEM_PROMPT="Answer in English." node scripts/vision-probe.mjs moondream "C:/obraz.jpg"
-
-# Steruje prawdziwym UI aplikacji przez Chrome DevTools Protocol.
-# Wymaga tymczasowego debug portu - patrz nagłówek scripts/ui-drive.mjs.
-# `source scripts/dev-ensure-app.sh && ensure_app` najpierw, gdy okno nie stoi:
-# nic nie buduje, tylko uruchamia Vite i zbudowany plik i czeka.
-cat expr.js | node scripts/ui-drive.mjs
-
-# Zdjęcia prawdziwego okna tym samym protokołem, sterowane planem JSON:
-# ustawia dokładny widok, potrafi najpierw poklikać w aplikacji (`prepare`)
-# i zapisuje PNG. `capture: false` mierzy układ bez zapisywania pliku - tak
-# powstały zdjęcia w `docs/screenshots`.
-node scripts/screenshot.mjs plan.json
-
 # Kompletność tłumaczeń w obie strony plus reguła długości każdego tekstu
 # (etykieta, która wyrasta z kolumny, rozjeżdża układ).
 npm run check:i18n

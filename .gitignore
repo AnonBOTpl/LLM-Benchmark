@@ -1,5 +1,12 @@
 node_modules/
 dist/
+# Ten folder trzyma też narzędzia czysto lokalne (diagnostyka Ollamy, sterowanie
+# interfejsem, plan zdjęć), które nie są częścią wydania. W repozytorium zostają
+# wyłącznie dwa skrypty, bez których nie ruszy `npm run build` - ten sam, który
+# uruchamia `beforeBuildCommand` w `tauri.conf.json`.
+scripts/*
+!scripts/check-i18n.mjs
+!scripts/check-ui.mjs
 # Notatki roboczne: opis projektu dla agenta i dziennik rozbudowy to dokumenty
 # lokalne, nie część wydania. Katalog `.agents` z instrukcjami też.
 agents.md

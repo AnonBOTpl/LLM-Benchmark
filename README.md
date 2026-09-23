@@ -414,36 +414,13 @@ tab, and both say *on the card*.
 
 ## Verification tools
 
-A few helper scripts for checking the pipeline without clicking through the GUI:
+Two checks guard rules that are easy to break by accident, and both run as part of `npm run build` -
+which is also the `beforeBuildCommand` of the Tauri bundle, so a bad translation or an overgrown
+label fails the build instead of being noticed after release:
 
 ```bash
-# Checks the Ollama calls 1:1 with what ollama.rs does (generate, not pull):
-# measures TTFT, tokens/s and shows a cold vs warm start.
-node scripts/ollama-smoke.mjs qwen2.5-coder:3b
-
-# VLM diagnostics: sends an image with several prompts and shows the raw stream
-# (chunk count, character count, TTFT, eval_count, tokens/s, done_reason).
-# Useful when a model "says nothing" - you can see whether the response is empty.
-# It also prints the model template and whether it uses the `system` field at all.
-node scripts/vision-probe.mjs moondream "C:/path/to/image.jpg"
-
-# ...or check whether a model reacts to the `system` field:
-SYSTEM_PROMPT="Answer in English." node scripts/vision-probe.mjs moondream "C:/image.jpg"
-
-# Drives the real UI over the Chrome DevTools Protocol.
-# Needs a temporary debug port - see the header of scripts/ui-drive.mjs.
-# `source scripts/dev-ensure-app.sh && ensure_app` first if the window is not up
-# yet: it builds nothing, it just starts Vite and the built binary and waits.
-cat expr.js | node scripts/ui-drive.mjs
-
-# Screenshots of the real window over the same protocol, driven by a JSON plan:
-# it sets an exact viewport, can click through the app first (`prepare`) and
-# writes PNGs. `capture: false` measures a layout without saving a file - that
-# is how the screenshots in `docs/screenshots` were made.
-node scripts/screenshot.mjs plan.json
-
-# Translation completeness in both directions, plus a length check on every
-# text (a label that outgrows its column breaks the layout).
+# Translation completeness in both directions, plus a length limit on every
+# text: a label that outgrows its column breaks the layout.
 npm run check:i18n
 
 # Interface rule: no text smaller than 12 px, anywhere.
