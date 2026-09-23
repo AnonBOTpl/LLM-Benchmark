@@ -1,0 +1,12 @@
+# Pliki tekstowe trzymamy w LF **także w katalogu roboczym**. Domyślne
+# `core.autocrlf = true` na Windows zapisuje do repo LF, ale przy każdym
+# `git add` ostrzega „LF will be replaced by CRLF”, a plik po ponownym
+# wypakowaniu ma inne końce linii niż przed - czyli diff bez zmiany treści.
+# `text=auto` sam rozpoznaje pliki binarne (ikony, obrazy) i ich nie rusza.
+* text=auto eol=lf
+
+# `text=auto` sam rozpoznaje binarne pliki, ale ikony wypisujemy wprost: mają
+# zostać bajt w bajt takie same, a `binary` wyłącza też próby diffowania ich.
+*.png binary
+*.ico binary
+*.icns binary

@@ -1,0 +1,35 @@
+[package]
+name = "ai-benchmark"
+version = "1.0.0"
+description = "AI Benchmark - porownywarka lokalnych modeli LLM (Ollama)"
+authors = ["AnonBOTpl"]
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "ai_benchmark_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+# Rozmiar i pozycja okna mają przeżyć zamknięcie aplikacji. Tauri nie umie tego
+# samo (`maximized` z konfiguracji jest znane jako niedziałające, tauri#11554),
+# a plugin zapisuje stan okna do pliku w katalogu konfiguracji.
+tauri-plugin-window-state = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# TLS (native-tls) jest potrzebny do pytania rejestru Ollamy o rozmiar modelu,
+# którego nie ma jeszcze na dysku. Rozmowa z lokalnym Ollamą idzie po http.
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "native-tls"] }
+futures-util = "0.3"
+tokio = { version = "1", features = ["macros", "sync", "time"] }
+nvml-wrapper = "0.10"
+base64 = "0.22"
+chrono = "0.4"
+opener = "0.7"
+sysinfo = "0.39.6"
+rustpython-parser = "0.4.0"

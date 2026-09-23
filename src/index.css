@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink-950 text-slate-200 font-sans antialiased overflow-hidden;
+    font-size: 14px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-600 rounded-full border-2 border-solid border-transparent bg-clip-content;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-500 bg-clip-content;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-ink-900 border border-ink-700 rounded-xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm
+           font-medium transition-colors select-none disabled:opacity-40
+           disabled:cursor-not-allowed whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply btn bg-accent-500 text-ink-950 hover:bg-accent-400;
+  }
+  .btn-ghost {
+    @apply btn bg-ink-800 text-slate-300 border border-ink-700 hover:bg-ink-700 hover:text-white;
+  }
+  .btn-danger {
+    @apply btn bg-red-500/10 text-red-300 border border-red-500/30 hover:bg-red-500/20;
+  }
+  .btn-success {
+    @apply btn bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25;
+  }
+  .btn-xs {
+    @apply px-2 py-1 text-xs rounded-md;
+  }
+
+  .input {
+    @apply bg-ink-850 border border-ink-700 rounded-lg px-3 py-1.5 text-sm text-slate-200
+           placeholder-slate-500 focus:outline-none focus:border-accent-500/70
+           focus:ring-1 focus:ring-accent-500/25 w-full;
+  }
+
+  .label {
+    @apply text-[12px] uppercase tracking-wide text-slate-500 font-semibold;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[12px] font-medium
+           border transition-colors cursor-pointer select-none;
+  }
+  .chip-on {
+    @apply chip bg-accent-500/15 text-accent-400 border-accent-500/40;
+  }
+  .chip-off {
+    @apply chip bg-ink-800 text-slate-500 border-ink-700 hover:text-slate-300;
+  }
+
+  /* Opcja w pasku filtrów (katalog modeli): nazwa po lewej, licznik wyników po prawej.
+     Stan „off” = ta opcja daje zero wyników, więc jest wyszarzona, a nie ukryta —
+     użytkownik ma widzieć, że filtr istnieje, tylko nic nim nie znajdzie. */
+  .fopt {
+    @apply flex w-full items-center justify-between gap-2 rounded-lg border border-ink-700/60
+           bg-ink-850 px-2 py-1 text-left text-[12px] text-slate-400 transition-colors
+           hover:border-ink-600 hover:text-slate-200;
+  }
+  .fopt-on {
+    @apply fopt border-accent-500/40 bg-accent-500/15 text-accent-400;
+  }
+  .fopt-off {
+    @apply fopt cursor-not-allowed border-ink-700/40 bg-ink-850/40 text-slate-600
+           hover:border-ink-700/40 hover:text-slate-600;
+  }
+  .fcount {
+    @apply shrink-0 font-mono text-[12px] opacity-70;
+  }
+
+  /* Skąd pochodzi filtr: od HuggingFace czy policzony przez nas. */
+  .badge-src-hf {
+    @apply inline-flex items-center rounded border border-ink-600 bg-ink-800 px-1.5 py-0.5
+           text-[12px] font-semibold uppercase tracking-wide text-slate-400;
+  }
+  .badge-src-our {
+    @apply inline-flex items-center rounded border border-accent-500/30 bg-accent-500/10 px-1.5 py-0.5
+           text-[12px] font-semibold uppercase tracking-wide text-accent-400;
+  }
+
+  .cell {
+    @apply px-3 py-2 text-left align-middle;
+  }
+  .cell-head {
+    @apply cell text-[12px] uppercase tracking-wide text-slate-500 font-semibold
+           bg-ink-850 sticky top-0 z-10;
+  }
+}

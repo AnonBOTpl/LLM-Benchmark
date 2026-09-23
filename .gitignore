@@ -1,0 +1,16 @@
+node_modules/
+dist/
+# Notatki roboczne: opis projektu dla agenta i dziennik rozbudowy to dokumenty
+# lokalne, nie część wydania. Katalog `.agents` z instrukcjami też.
+agents.md
+rozbudowa.md
+.agents/
+# Artefakt narzędzia, którym piszę kod - nie część projektu ani wydania.
+.freebuff/
+# Makieta przebudowy: lokalny podgląd układu, ani część aplikacji, ani wydania.
+mockups/
+src-tauri/target/
+src-tauri/gen/
+*.local
+.DS_Store
+app-icon.png
