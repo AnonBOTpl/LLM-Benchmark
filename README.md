@@ -5,9 +5,9 @@ It measures time to first token, generation speed (tokens/s) and VRAM usage whil
 
 > 🇵🇱 Polish documentation: [README-pl.md](README-pl.md)
 
-<a href="docs/screenshots/test-run.png" target="_blank"><img src="docs/screenshots/test-run.png" alt="A run in progress: live progress, the streamed answer and the metrics"></a>
+[![A run in progress: live progress, the streamed answer and the metrics](docs/screenshots/test-run.png)](docs/screenshots/test-run.png)
 
-<a href="docs/screenshots/classification.png" target="_blank"><img src="docs/screenshots/classification.png" width="200" alt="Manual response classification"></a> <a href="docs/screenshots/results.png" target="_blank"><img src="docs/screenshots/results.png" width="200" alt="Results table with an A/B comparison"></a> <a href="docs/screenshots/models.png" target="_blank"><img src="docs/screenshots/models.png" width="200" alt="Model panel with live VRAM state"></a> <a href="docs/screenshots/model-search.png" target="_blank"><img src="docs/screenshots/model-search.png" width="200" alt="HuggingFace catalogue with memory verdicts"></a>
+<a href="docs/screenshots/classification.png"><img src="docs/screenshots/classification.png" width="200" alt="Manual response classification"></a> <a href="docs/screenshots/results.png"><img src="docs/screenshots/results.png" width="200" alt="Results table with an A/B comparison"></a> <a href="docs/screenshots/models.png"><img src="docs/screenshots/models.png" width="200" alt="Model panel with live VRAM state"></a> <a href="docs/screenshots/model-search.png"><img src="docs/screenshots/model-search.png" width="200" alt="HuggingFace catalogue with memory verdicts"></a>
 
 *From left: grading an answer by hand, the results table with the A/B comparison, a model panel with
 live VRAM state, and the HuggingFace catalogue with its memory verdicts. Every image is a real
