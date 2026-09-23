@@ -5,9 +5,9 @@ Mierzy czas do pierwszego tokenu, tokens/s generowania oraz zużycie VRAM w trak
 
 > 🇬🇧 English documentation: [README.md](README.md)
 
-[![Przebieg w trakcie: postęp, streamowana odpowiedź i metryki](docs/screenshots/test-run.png)](docs/screenshots/test-run.png)
+<a href="docs/screenshots/test-run.png" target="_blank"><img src="docs/screenshots/test-run.png" alt="Przebieg w trakcie: postęp, streamowana odpowiedź i metryki"></a>
 
-<a href="docs/screenshots/classification.png"><img src="docs/screenshots/classification.png" width="200" alt="Ręczna klasyfikacja odpowiedzi"></a> <a href="docs/screenshots/results.png"><img src="docs/screenshots/results.png" width="200" alt="Tabela wyników z porównaniem A i B"></a> <a href="docs/screenshots/models.png"><img src="docs/screenshots/models.png" width="200" alt="Panel modelu ze stanem VRAM"></a> <a href="docs/screenshots/model-search.png"><img src="docs/screenshots/model-search.png" width="200" alt="Katalog HuggingFace z werdyktami pamięci"></a>
+<a href="docs/screenshots/classification.png" target="_blank"><img src="docs/screenshots/classification.png" width="200" alt="Ręczna klasyfikacja odpowiedzi"></a> <a href="docs/screenshots/results.png" target="_blank"><img src="docs/screenshots/results.png" width="200" alt="Tabela wyników z porównaniem A i B"></a> <a href="docs/screenshots/models.png" target="_blank"><img src="docs/screenshots/models.png" width="200" alt="Panel modelu ze stanem VRAM"></a> <a href="docs/screenshots/model-search.png" target="_blank"><img src="docs/screenshots/model-search.png" width="200" alt="Katalog HuggingFace z werdyktami pamięci"></a>
 
 *Od lewej: ręczna ocena odpowiedzi, tabela wyników z porównaniem A i B, panel modelu ze stanem VRAM
 na żywo i katalog HuggingFace z werdyktami pamięci. Każde zdjęcie to prawdziwe okno 1440 x 920 -
