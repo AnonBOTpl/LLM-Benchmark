@@ -21,7 +21,6 @@
         "minHeight": 640,
         "visible": false,
         "decorations": false,
-        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection --remote-debugging-port=9222 --remote-allow-origins=*",
         "transparent": false,
         "resizable": true,
         "center": true
@@ -31,9 +30,15 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["nsis"],
     "publisher": "AnonBOTpl",
     "copyright": "© 2026 AnonBOTpl",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["English", "Polish"]
+      }
+    },
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
