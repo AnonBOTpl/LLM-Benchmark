@@ -5,18 +5,21 @@ Mierzy czas do pierwszego tokenu, tokens/s generowania oraz zużycie VRAM w trak
 
 > 🇬🇧 English documentation: [README.md](README.md)
 
-[![Przebieg w trakcie: postęp, streamowana odpowiedź i metryki](docs/screenshots/test-run.png)](docs/screenshots/test-run.png)
+[![Przebieg w trakcie: postęp, streamowana odpowiedź i metryki](docs/screenshots/test-run.png)](docs/screenshots/test-run.png?raw=true)
 
-<a href="docs/screenshots/classification.png"><img src="docs/screenshots/classification.png" width="200" alt="Ręczna klasyfikacja odpowiedzi"></a> <a href="docs/screenshots/results.png"><img src="docs/screenshots/results.png" width="200" alt="Tabela wyników z porównaniem A i B"></a> <a href="docs/screenshots/models.png"><img src="docs/screenshots/models.png" width="200" alt="Panel modelu ze stanem VRAM"></a> <a href="docs/screenshots/model-search.png"><img src="docs/screenshots/model-search.png" width="200" alt="Katalog HuggingFace z werdyktami pamięci"></a>
+<a href="docs/screenshots/classification.png?raw=true"><img src="docs/screenshots/classification.png" width="200" alt="Ręczna klasyfikacja odpowiedzi"></a> <a href="docs/screenshots/results.png?raw=true"><img src="docs/screenshots/results.png" width="200" alt="Tabela wyników z porównaniem A i B"></a> <a href="docs/screenshots/models.png?raw=true"><img src="docs/screenshots/models.png" width="200" alt="Panel modelu ze stanem VRAM"></a> <a href="docs/screenshots/model-search.png?raw=true"><img src="docs/screenshots/model-search.png" width="200" alt="Katalog HuggingFace z werdyktami pamięci"></a>
 
 *Od lewej: ręczna ocena odpowiedzi, tabela wyników z porównaniem A i B, panel modelu ze stanem VRAM
-na żywo i katalog HuggingFace z werdyktami pamięci. Każde zdjęcie to prawdziwe okno 1440 x 920 -
-kliknij, żeby zobaczyć je w pełnym rozmiarze.*
+na żywo i katalog HuggingFace z werdyktami pamięci. Każde zdjęcie to prawdziwe okno 1440 x 920,
+a kliknięcie otwiera je w pełnym rozmiarze - użyj Ctrl+kliku albo środkowego przycisku, żeby nie
+tracić tej strony, bo README nie może poprosić o nową kartę (GitHub wycina atrybut `target`).*
 
 ## Instalacja (dla użytkownika)
 
-Wydanie to **instalator Windows**: `.msi` przy standardowej instalacji, `.exe` (NSIS), jeśli wolisz
-klasyczny kreator. Budowanie ze źródeł tworzy oba w `src-tauri/target/release/bundle/`.
+Wydanie to **jeden instalator Windows** zbudowany NSIS-em: `AI-Benchmark_1.0.0_x64-setup.exe`.
+Instaluje się **per użytkownik** (bez pytania o administratora) i znika z „Aplikacji i funkcji” jak
+każdy inny program. Budowanie ze źródeł tworzy ten sam plik w
+`src-tauri/target/release/bundle/nsis/`.
 
 Dwie rzeczy, które trzeba wiedzieć, zanim go uruchomisz:
 

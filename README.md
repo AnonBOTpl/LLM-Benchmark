@@ -5,18 +5,21 @@ It measures time to first token, generation speed (tokens/s) and VRAM usage whil
 
 > 🇵🇱 Polish documentation: [README-pl.md](README-pl.md)
 
-[![A run in progress: live progress, the streamed answer and the metrics](docs/screenshots/test-run.png)](docs/screenshots/test-run.png)
+[![A run in progress: live progress, the streamed answer and the metrics](docs/screenshots/test-run.png)](docs/screenshots/test-run.png?raw=true)
 
-<a href="docs/screenshots/classification.png"><img src="docs/screenshots/classification.png" width="200" alt="Manual response classification"></a> <a href="docs/screenshots/results.png"><img src="docs/screenshots/results.png" width="200" alt="Results table with an A/B comparison"></a> <a href="docs/screenshots/models.png"><img src="docs/screenshots/models.png" width="200" alt="Model panel with live VRAM state"></a> <a href="docs/screenshots/model-search.png"><img src="docs/screenshots/model-search.png" width="200" alt="HuggingFace catalogue with memory verdicts"></a>
+<a href="docs/screenshots/classification.png?raw=true"><img src="docs/screenshots/classification.png" width="200" alt="Manual response classification"></a> <a href="docs/screenshots/results.png?raw=true"><img src="docs/screenshots/results.png" width="200" alt="Results table with an A/B comparison"></a> <a href="docs/screenshots/models.png?raw=true"><img src="docs/screenshots/models.png" width="200" alt="Model panel with live VRAM state"></a> <a href="docs/screenshots/model-search.png?raw=true"><img src="docs/screenshots/model-search.png" width="200" alt="HuggingFace catalogue with memory verdicts"></a>
 
 *From left: grading an answer by hand, the results table with the A/B comparison, a model panel with
 live VRAM state, and the HuggingFace catalogue with its memory verdicts. Every image is a real
-1440 x 920 window - click one to view it at full size.*
+1440 x 920 window, and clicking one opens it at full size - use Ctrl+click or middle-click to keep
+this page open, because a README cannot ask for a new tab (GitHub strips the `target` attribute).*
 
 ## Installing (for users)
 
-The release is a **Windows installer**: `.msi` for a standard install, `.exe` (NSIS) if you prefer the
-classic wizard. Building from source produces both in `src-tauri/target/release/bundle/`.
+The release is a single **Windows installer** built with NSIS: `AI-Benchmark_1.0.0_x64-setup.exe`. It
+installs **per user** (no administrator prompt) and is removed from "Apps & features" like any other
+program. Building from source produces the same file in
+`src-tauri/target/release/bundle/nsis/`.
 
 Two things to know before you run it:
 
