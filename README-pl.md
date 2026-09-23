@@ -5,6 +5,14 @@ Mierzy czas do pierwszego tokenu, tokens/s generowania oraz zużycie VRAM w trak
 
 > 🇬🇧 English documentation: [README.md](README.md)
 
+[![Przebieg w trakcie: postęp, streamowana odpowiedź i metryki](docs/screenshots/test-run.png)](docs/screenshots/test-run.png)
+
+<a href="docs/screenshots/classification.png"><img src="docs/screenshots/classification.png" width="200" alt="Ręczna klasyfikacja odpowiedzi"></a> <a href="docs/screenshots/results.png"><img src="docs/screenshots/results.png" width="200" alt="Tabela wyników z porównaniem A i B"></a> <a href="docs/screenshots/models.png"><img src="docs/screenshots/models.png" width="200" alt="Panel modelu ze stanem VRAM"></a> <a href="docs/screenshots/model-search.png"><img src="docs/screenshots/model-search.png" width="200" alt="Katalog HuggingFace z werdyktami pamięci"></a>
+
+*Od lewej: ręczna ocena odpowiedzi, tabela wyników z porównaniem A i B, panel modelu ze stanem VRAM
+na żywo i katalog HuggingFace z werdyktami pamięci. Każde zdjęcie to prawdziwe okno 1440 x 920 -
+kliknij, żeby zobaczyć je w pełnym rozmiarze.*
+
 ## Instalacja (dla użytkownika)
 
 Wydanie to **instalator Windows**: `.msi` przy standardowej instalacji, `.exe` (NSIS), jeśli wolisz
@@ -423,6 +431,12 @@ SYSTEM_PROMPT="Answer in English." node scripts/vision-probe.mjs moondream "C:/o
 # `source scripts/dev-ensure-app.sh && ensure_app` najpierw, gdy okno nie stoi:
 # nic nie buduje, tylko uruchamia Vite i zbudowany plik i czeka.
 cat expr.js | node scripts/ui-drive.mjs
+
+# Zdjęcia prawdziwego okna tym samym protokołem, sterowane planem JSON:
+# ustawia dokładny widok, potrafi najpierw poklikać w aplikacji (`prepare`)
+# i zapisuje PNG. `capture: false` mierzy układ bez zapisywania pliku - tak
+# powstały zdjęcia w `docs/screenshots`.
+node scripts/screenshot.mjs plan.json
 
 # Kompletność tłumaczeń w obie strony plus reguła długości każdego tekstu
 # (etykieta, która wyrasta z kolumny, rozjeżdża układ).

@@ -5,6 +5,14 @@ It measures time to first token, generation speed (tokens/s) and VRAM usage whil
 
 > 🇵🇱 Polish documentation: [README-pl.md](README-pl.md)
 
+[![A run in progress: live progress, the streamed answer and the metrics](docs/screenshots/test-run.png)](docs/screenshots/test-run.png)
+
+<a href="docs/screenshots/classification.png"><img src="docs/screenshots/classification.png" width="200" alt="Manual response classification"></a> <a href="docs/screenshots/results.png"><img src="docs/screenshots/results.png" width="200" alt="Results table with an A/B comparison"></a> <a href="docs/screenshots/models.png"><img src="docs/screenshots/models.png" width="200" alt="Model panel with live VRAM state"></a> <a href="docs/screenshots/model-search.png"><img src="docs/screenshots/model-search.png" width="200" alt="HuggingFace catalogue with memory verdicts"></a>
+
+*From left: grading an answer by hand, the results table with the A/B comparison, a model panel with
+live VRAM state, and the HuggingFace catalogue with its memory verdicts. Every image is a real
+1440 x 920 window - click one to view it at full size.*
+
 ## Installing (for users)
 
 The release is a **Windows installer**: `.msi` for a standard install, `.exe` (NSIS) if you prefer the
@@ -424,6 +432,12 @@ SYSTEM_PROMPT="Answer in English." node scripts/vision-probe.mjs moondream "C:/i
 # `source scripts/dev-ensure-app.sh && ensure_app` first if the window is not up
 # yet: it builds nothing, it just starts Vite and the built binary and waits.
 cat expr.js | node scripts/ui-drive.mjs
+
+# Screenshots of the real window over the same protocol, driven by a JSON plan:
+# it sets an exact viewport, can click through the app first (`prepare`) and
+# writes PNGs. `capture: false` measures a layout without saving a file - that
+# is how the screenshots in `docs/screenshots` were made.
+node scripts/screenshot.mjs plan.json
 
 # Translation completeness in both directions, plus a length check on every
 # text (a label that outgrows its column breaks the layout).
